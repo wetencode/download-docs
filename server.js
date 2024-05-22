@@ -1,7 +1,7 @@
 
 const express = require('express');
 const app = express();
-const port = 5000;
+const port = 6001;
 const path = require('path');
 const sendHTMLL = require('./controller/sendhtml');
 const downloadModule = require('./controller/downloadd');
@@ -15,14 +15,14 @@ app.use(express.urlencoded({ extended : false}));
 
 
 app.get('/', (req, res)=>{
-    res.send('<b>hello server</b>')
+    res.send('<b style=>hello server</b>')
 });
 
 
-app.get('/view_documents', downloadModule);
+app.get('/attached_document_doc', downloadModule);
 
 
-app.get('/send_html', sendHTMLL);
+app.get('/view_attached_document_doc', sendHTMLL);
 
 
 app.listen(`${port}`, (req,res)=>{
