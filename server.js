@@ -5,6 +5,7 @@ const port = 6001;
 const path = require('path');
 const sendHTMLL = require('./controller/sendhtml');
 const downloadModule = require('./controller/downloadd');
+const downloadnow = require('./controller/downloadnow');
 
 // ======================================================
 
@@ -19,10 +20,14 @@ app.get('/', (req, res)=>{
 });
 
 
+
+
 app.get('/attached_document_doc', downloadModule);
 
 
 app.get('/view_attached_document_doc', sendHTMLL);
+
+app.get('/excel_document_xlsx', downloadnow);
 
 
 app.listen(`${port}`, (req,res)=>{

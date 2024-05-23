@@ -3,7 +3,7 @@ const path = require('path');
 
 const p = path.join(__dirname, 'public', '../../public', 'attached_documents.html')
 
-function DownloadeFile(req, res){
+function DownloadeFileNow(req, res){
     res.download(path.join(__dirname, 'public', '../../public', 'attached_documents.html'), err=>{
         if (err) {
             console.error(err);
@@ -14,7 +14,7 @@ function DownloadeFile(req, res){
     console.log('File has been downloaded!!')
 };
 
-module.exports = DownloadeFile;
+module.exports = DownloadeFileNow;
 
 // function sendHTML(req,res){
 //     res.sendFile(path.join(__dirname, 'public', '../../public', 'index.html'))
