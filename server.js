@@ -4,8 +4,9 @@ const app = express();
 const port = 6001;
 const path = require('path');
 const sendHTMLL = require('./controller/sendhtml');
-const downloadModule = require('./controller/downloadd');
-const downloadnow = require('./controller/downloadnow');
+const downloadModule = require('./controller/downloadnow');
+// const downloadnow = require('./controller/downloadnow');
+const exeldownload = require('./controller/downloadd');
 
 // ======================================================
 
@@ -20,16 +21,15 @@ app.get('/', (req, res)=>{
 });
 
 
-
-
 app.get('/attached_document_doc', downloadModule);
 
 
 app.get('/view_attached_document_doc', sendHTMLL);
 
-app.get('/excel_document_xlsx', downloadnow);
+
+app.get('/excel_document_xlsx', exeldownload);
 
 
 app.listen(`${port}`, (req,res)=>{
     console.log(`app started @ port ${port}`);
-}); 
+});
