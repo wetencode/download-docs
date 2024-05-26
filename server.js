@@ -7,13 +7,13 @@ const sendHTMLL = require('./controller/sendhtml');
 const downloadModule = require('./controller/downloadnow');
 // const downloadnow = require('./controller/downloadnow');
 const exeldownload = require('./controller/downloadd');
+const downloadthree = require('./controller/threedownload');
 
 // ======================================================
 
 
 app.use(express.json());
 app.use(express.urlencoded({ extended : false}));
-// app.use(co)
 
 
 app.get('/', (req, res)=>{
@@ -28,6 +28,9 @@ app.get('/view_attached_document_doc', sendHTMLL);
 
 
 app.get('/excel_document_xlsx', exeldownload);
+
+
+app.get('/download_excel_document', downloadthree)
 
 
 app.listen(`${port}`, (req,res)=>{
